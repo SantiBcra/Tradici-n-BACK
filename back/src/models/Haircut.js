@@ -26,6 +26,11 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       },
+      time: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+     
      
     },
 

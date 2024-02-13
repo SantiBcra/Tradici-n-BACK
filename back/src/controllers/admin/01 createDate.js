@@ -3,8 +3,11 @@ const { Haircut } = require("../../db");
 const postHaircut = async (peluquero ,pago ,metodo ) => {
         try {
           
-          
-            const newHaircut = await Haircut.create({ peluquero ,pago ,metodo });
+          var today = new Date(),
+          time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+
+
+            const newHaircut = await Haircut.create({ peluquero ,pago ,metodo,time });
             return newHaircut;
             
           } catch (error) {
