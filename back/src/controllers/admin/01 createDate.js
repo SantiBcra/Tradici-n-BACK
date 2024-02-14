@@ -3,8 +3,9 @@ const { Haircut } = require("../../db");
 const postHaircut = async (peluquero ,pago ,metodo ) => {
         try {
           
-          var today = new Date(),
-          time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+          var today = new Date();
+var options = { timeZone: 'America/Argentina/Buenos_Aires' };
+var time = today.toLocaleTimeString('en-US', options);
 
 
             const newHaircut = await Haircut.create({ peluquero ,pago ,metodo,time });
