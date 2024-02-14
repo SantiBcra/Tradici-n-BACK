@@ -22,12 +22,11 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       fecha: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       },
       time: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
      

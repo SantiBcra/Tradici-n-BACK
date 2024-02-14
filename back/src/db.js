@@ -4,14 +4,14 @@ const fs = require("fs");
 const path = require("path");
 const { DATA_NAME, DB_USER, DB_PASSWORD, DB_HOST,DB_URL  } = process.env;
 
-const sequelize = new Sequelize(
- DB_URL
-  ,
-  {
+const sequelize = new Sequelize(`postgres://postgres:1234@localhost/canchasya`,
+//  DB_URL
+//   ,
+//   {
   
-    dialect : 'postgres',
+//     dialect : 'postgres',
     
-  }
+//   }
 );
 const basename = path.basename(__filename);
 
