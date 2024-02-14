@@ -3,7 +3,7 @@ const app = require("./src/app");
 
 const PORT = 3001;
 
-conn.sync({ force: false})
+conn.sync({ force: true})
 
 
   .then(() => {
