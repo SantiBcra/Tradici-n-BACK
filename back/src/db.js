@@ -1,18 +1,22 @@
 require("dotenv").config();
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require('sequelize');
 const fs = require("fs");
 const path = require("path");
-const { DATA_NAME, DB_USER, DB_PASSWORD, DB_HOST,DB_URL  } = process.env;
+const {DB_USER, DB_PASSWORD, DB_PORT,DB_HOST,DB_DIALECT,DB_NAME  } = process.env;
 
-const sequelize = new Sequelize(
- DB_URL
-  ,
-  {
-  
-    dialect : 'postgres',
-    
+console.log(DB_USER)
+const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+  host: DB_HOST,
+  dialect: DB_DIALECT,
+  ssl: true, // Habilita SSL
+  dialectOptions: {
+    ssl: {
+      require: true, // Requerir SSL
+      rejectUnauthorized: false // Opción para evitar errores con certificados autofirmados o no válidos
+    }
   }
-);
+});
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];

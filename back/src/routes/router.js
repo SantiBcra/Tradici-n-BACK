@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const {
- 
+  countRouter,
   adminRouter,
   promoRouter
  
@@ -10,6 +10,6 @@ const router = Router();
 
 router.use("/admin", adminRouter);
 router.use("/promo", promoRouter);
-
+router.use("/count", countRouter);
 
 module.exports = router;
