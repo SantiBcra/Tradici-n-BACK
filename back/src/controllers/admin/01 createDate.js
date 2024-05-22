@@ -19,7 +19,7 @@ var fecha = today.toLocaleDateString('en-US', options);
         
             const cuenta = await Count.findByPk("40bbd294-b223-4a9b-818b-3472f1016b29");
 
-console.log(cuenta)
+
           
 
 await cuenta.increment('count', { by: 1 });
